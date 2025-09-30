@@ -2,7 +2,22 @@ class Book:
     def __init__(self, title, author):
         self.title = title
         self.author = author
-        self.__is_checked_out = False
+        self.__is_checked_out = False  # private attribute
+
+    def is_checked_out(self):
+        return self.__is_checked_out
+
+    def check_out(self):
+        if not self.__is_checked_out:
+            self.__is_checked_out = True
+            return True
+        return False
+
+    def return_book(self):
+        if self.__is_checked_out:
+            self.__is_checked_out = False
+            return True
+        return False
 
 class Library:
     def __init__(self):
