@@ -21,12 +21,10 @@ class EBook(Book):
 class PrintBook(Book):
     def __init__(self, title, author, page_count):
         super().__init__(title, author)
-        self.num_pages = page_count
+        self.page_count = page_count  # ✅ must be named page_count
 
     def __str__(self):
-        # Override Book's __str__ to include page count
-        return f"Print Book: {self.title} by {self.author}, Pages: {self.num_pages}"
-
+        return f"Print Book: {self.title} by {self.author}, Pages: {self.page_count}"
 
 class Library:
     def __init__(self):
